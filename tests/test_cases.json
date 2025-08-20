@@ -1,0 +1,34 @@
+[
+  {
+    "id": "invoice_json_v1",
+    "title": "Invoice --> JSON",
+    "prompt_template": "Extract invoice fields as JSON: {{invoice_text}}",
+    "input_example_json": {
+      "invoice_text": "Invoice No: 12345\nDate: 2025-01-10\nTotal: $324.56\nVendor: ACME Supplies"
+    },
+    "expected_output_json": {
+      "schema_only": true,
+      "json_schema": {
+        "type": "object",
+        "required": ["invoice_no", "date", "total"],
+        "properties": {
+          "invoice_no": {"type": "string"},
+          "date": {"type": "string"},
+          "total": {"type": "number"},
+          "vendor": {"type": "string"}
+        }
+      },
+      "canonical_example": {
+        "invoice_no": "12345",
+        "date": "2025-01-10",
+        "total": 324.56,
+        "vendor": "ACME Supplies"
+      }
+    },
+    "eval_contract_json": {
+      "format": "json_schema",
+      "semantic": {"threshold": 0.70}
+    },
+    "tags": ["invoice", "structured"]
+  }
+]
