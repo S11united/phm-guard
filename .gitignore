@@ -1,6 +1,31 @@
-﻿venv/
+# Python
 __pycache__/
 *.pyc
-.env
-.phm_db.sqlite
+*.pyo
+*.pyd
+env/
+venv/
+.Python
+env.bak/
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Databases and secrets
+db/phm.db
+.phm_db.sqlite
+.env
+*.sqlite3
+*.db
+
+# Node / frontend
+node_modules/
+frontend/dist/
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
